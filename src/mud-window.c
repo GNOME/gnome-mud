@@ -731,6 +731,7 @@ mud_window_notebook_page_change(GtkNotebook *notebook, gpointer page, gint arg, 
 
         gtk_widget_set_sensitive(self->priv->menu_disconnect, connected);
         gtk_widget_set_sensitive(self->priv->toolbar_disconnect, connected);
+        gtk_widget_set_sensitive(self->priv->toolbar_reconnect, !connected);
 
         mud_window_toggle_input_mode(self, self->priv->current_view);
 
