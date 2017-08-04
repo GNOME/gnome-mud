@@ -352,8 +352,8 @@ mud_telnet_msp_parser_clear(MudTelnetMsp *self)
 void
 mud_telnet_msp_parse(MudTelnetMsp *self, MudLineBufferLine *line)
 {
-    guint len = strlen(line->line);
-    gchar *buf = line->line;
+    gsize len = line->line->len;
+    gchar *buf = line->line->str;
 
     g_return_if_fail(MUD_IS_TELNET_MSP(self));
 
