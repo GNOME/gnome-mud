@@ -661,20 +661,20 @@ mud_telnet_msp_parser_args(MudTelnetMsp *self)
     }
 
     if(command->C)
-        command->cont = atoi(command->C);
+        command->cont = g_ascii_strtoll(command->C, NULL, 10);
 
     if(command->T)
         command->sfx_type = g_strdup(command->T);
 
     if(command->V)
-        command->volume = atoi(command->V);
+        command->volume = g_ascii_strtoll(command->V, NULL, 10);
 
     if(command->P)
-        command->priority = atoi(command->P);
+        command->priority = g_ascii_strtoll(command->P, NULL, 10);
 
     if(command->L)
     {
-        command->initial_repeat_count = atoi(command->L);
+        command->initial_repeat_count = g_ascii_strtoll(command->L, NULL, 10);
 
         if(command->initial_repeat_count == 0)
             command->initial_repeat_count = 1;
@@ -872,7 +872,7 @@ mud_telnet_msp_start_playing(MudTelnetMsp *self, MudMSPTypes type)
         self->priv->sound[type].playing = TRUE;
 
         if(self->priv->sound[type].files_len != 0)
-            num = rand() % self->priv->sound[type].files_len;
+            num = g_random_int_range(0, self->priv->sound[type].files_len);
 
         self->priv->sound[type].play = gst_element_factory_make ("playbin", "play");
         g_object_set (G_OBJECT(self->priv->sound[type].play),
@@ -1082,7 +1082,7 @@ mud_telnet_msp_sound_bus_call (GstBus *bus, GstMessage *msg, gpointer data)
                 gint num = 0;
 
                 if(self->priv->sound[MSP_TYPE_SOUND].files_len != 0)
-                    num = rand() % self->priv->sound[MSP_TYPE_SOUND].files_len;
+                    num = g_random_int_range(0, self->priv->sound[MSP_TYPE_SOUND].files_len);
 
                 g_object_set (G_OBJECT(self->priv->sound[MSP_TYPE_SOUND].play),
                         "uri", self->priv->sound[MSP_TYPE_SOUND].files[num], NULL);
@@ -1136,7 +1136,7 @@ mud_telnet_msp_music_bus_call (GstBus *bus, GstMessage *msg, gpointer data)
                 gint num = 0;
 
                 if(self->priv->sound[MSP_TYPE_MUSIC].files_len != 0)
-                    num = rand() % self->priv->sound[MSP_TYPE_MUSIC].files_len;
+                    num = g_random_int_range(0, self->priv->sound[MSP_TYPE_MUSIC].files_len);
 
                 g_object_set (G_OBJECT(self->priv->sound[MSP_TYPE_MUSIC].play),
                         "uri", self->priv->sound[MSP_TYPE_MUSIC].files[num], NULL);
