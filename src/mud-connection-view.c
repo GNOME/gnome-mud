@@ -526,7 +526,7 @@ mud_connection_view_constructor (GType gtype,
     dl_vbox = gtk_vbox_new(FALSE, 0);
     dl_hbox = gtk_hbox_new(FALSE, 0);
 
-    self->priv->dl_label = gtk_label_new("Downloading...");
+    self->priv->dl_label = gtk_label_new("Downloading…");
     self->priv->progressbar = gtk_progress_bar_new();
     gtk_progress_bar_set_pulse_step (GTK_PROGRESS_BAR(self->priv->progressbar), 0.1);
     self->priv->dl_button = gtk_button_new_from_stock("gtk-cancel");
@@ -1965,7 +1965,7 @@ mud_connection_view_start_download(MudConnectionView *view)
     g_return_if_fail(!view->priv->downloading);
 
     gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(view->priv->progressbar), 0.0);
-    gtk_label_set_text(GTK_LABEL(view->priv->dl_label), _("Connecting..."));
+    gtk_label_set_text(GTK_LABEL(view->priv->dl_label), _("Connecting…"));
     gtk_widget_show(view->priv->progressbar);
     gtk_widget_show(view->priv->dl_label);
     gtk_widget_show(view->priv->dl_button);
@@ -1979,7 +1979,7 @@ mud_connection_view_start_download(MudConnectionView *view)
     g_string_append(dl_label_text, _("Downloading"));
     g_string_append_c(dl_label_text, ' ');
     g_string_append(dl_label_text, uri[g_strv_length(uri) - 1]);
-    g_string_append(dl_label_text, "...");
+    g_string_append(dl_label_text, "…");
 
     gtk_label_set_text(GTK_LABEL(view->priv->dl_label), dl_label_text->str);
 

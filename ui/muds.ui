@@ -17,7 +17,7 @@
   </object>
   <object class="GtkDialog" id="iconselect">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">Select An Icon...</property>
+    <property name="title" translatable="yes">Select An Icon…</property>
     <property name="modal">True</property>
     <property name="window_position">center-on-parent</property>
     <property name="default_width">300</property>

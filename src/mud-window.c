@@ -1225,7 +1225,7 @@ mud_window_populate_profiles_menu(MudWindow *self)
 
     icon = gtk_image_new_from_stock("gtk-edit", GTK_ICON_SIZE_MENU);
 
-    manage = gtk_image_menu_item_new_with_mnemonic(_("_Manage Profiles..."));
+    manage = gtk_image_menu_item_new_with_mnemonic(_("_Manage Profiles…"));
     gtk_image_menu_item_set_image(GTK_IMAGE_MENU_ITEM(manage), icon);
     gtk_widget_show(manage);
 

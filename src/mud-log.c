@@ -394,7 +394,7 @@ mud_log_select_clicked_cb(GtkWidget *widget,
     dialog = GTK_WIDGET(gtk_builder_get_object(builder, "save_dialog"));
     g_object_unref(builder);
 
-    g_object_set(dialog, "title", _("Save log as..."), NULL);
+    g_object_set(dialog, "title", _("Save log as…"), NULL);
 
     if(strlen(gtk_entry_get_text(GTK_ENTRY(self->priv->entry_file))) != 0)
     {
@@ -727,7 +727,7 @@ mud_log_open(MudLog *self)
 
             time(&t);
             strftime(buf, 1024,
-                    _("\n*** Log starts *** %d/%m/%Y %H:%M:%S\n"),
+                    _("\n*** Log starts *** %d/%m/%Y %H∶%M∶%S\n"),
                     localtime(&t));
             fprintf(self->priv->logfile, "%s", buf);
             fdatasync(fileno(self->priv->logfile));
@@ -812,7 +812,7 @@ mud_log_open(MudLog *self)
 
             utils_error_message(main_window,
                                 _("Log Error"),
-                                _("Could not open \"%s\" for writing."),
+                                _("Could not open “%s” for writing."),
                                 self->priv->filename);
         }
     }
@@ -845,7 +845,7 @@ mud_log_close(MudLog *log)
 
     time(&t);
     strftime(buf, 255,
-            _("\n *** Log stops *** %d/%m/%Y %H:%M:%S\n"),
+            _("\n *** Log stops *** %d/%m/%Y %H∶%M∶%S\n"),
             localtime(&t));
 
     fprintf(log->priv->logfile, "%s", buf);

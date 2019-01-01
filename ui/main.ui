@@ -19,7 +19,7 @@
   <object class="GtkDialog" id="log_config_window">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Start Logging...</property>
+    <property name="title" translatable="yes">Start Logging…</property>
     <property name="resizable">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="destroy_with_parent">True</property>
@@ -679,7 +679,7 @@
                     <property name="can_focus">False</property>
                     <child>
                       <object class="GtkImageMenuItem" id="main_connect">
-                        <property name="label" translatable="yes">C_onnection...</property>
+                        <property name="label" translatable="yes">C_onnection…</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>
@@ -724,7 +724,7 @@
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="menu_start_logging">
-                        <property name="label" translatable="yes">Start _Logging...</property>
+                        <property name="label" translatable="yes">Start _Logging…</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="can_focus">False</property>
@@ -746,7 +746,7 @@
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="menu_dump_buffer">
-                        <property name="label" translatable="yes">_Save Buffer...</property>
+                        <property name="label" translatable="yes">_Save Buffer…</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="can_focus">False</property>
@@ -830,7 +830,7 @@
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="menu_preferences">
-                        <property name="label">Profile Preferences...</property>
+                        <property name="label">Profile Preferences…</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>
@@ -1050,7 +1050,7 @@
   <object class="GtkFileChooserDialog" id="save_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Save buffer as...</property>
+    <property name="title" translatable="yes">Save buffer as…</property>
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
     <property name="action">save</property>
